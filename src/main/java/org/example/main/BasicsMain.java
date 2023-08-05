@@ -1,8 +1,9 @@
-package org.example;
+package org.example.main;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import org.example.lib.ResuableMethods;
+import org.example.lib.Payload;
+import org.example.lib.ReusableMethods;
 import org.testng.Assert;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +13,7 @@ import static org.hamcrest.Matchers.*;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
-public class Main {
+public class BasicsMain {
     public static void main(String[] args) {
         RestAssured.baseURI = "https://rahulshettyacademy.com";
 
@@ -37,7 +38,7 @@ public class Main {
                 .when().log().all().put("/maps/api/place/update/json")
                 .then().log().all().assertThat().statusCode(200).body("msg",equalTo("Address successfully updated")).extract().response().asString();
 
-        JsonPath js1 = ResuableMethods.rawToJson(response2);
+        JsonPath js1 = ReusableMethods.rawToJson(response2);
 
         String message = js1.getString("msg");
         Assert.assertEquals(message,"Address successfully updated");
@@ -63,6 +64,7 @@ public class Main {
 
         JsonPath js2 = new JsonPath(response3);
         //System.out.println(js2.getString("name"));
+
 
     }
 }
