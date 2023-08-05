@@ -2,18 +2,16 @@ package org.example.main;
 
 import io.restassured.path.json.JsonPath;
 import org.example.lib.Payload;
-import org.example.lib.ResuableMethods;
+import org.example.lib.ReusableMethods;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.sql.SQLOutput;
 
 public class ComplexJsonParse {
 //    public static void main(String[] args) {}
 
     @Test
     public void complexJsonValidations(){
-        JsonPath coursePriceJson = ResuableMethods.rawToJson(Payload.dummyCoursePriceResponse());
+        JsonPath coursePriceJson = ReusableMethods.rawToJson(Payload.dummyCoursePriceResponse());
         System.out.println(coursePriceJson.prettify());
 
         int countOfCourses = coursePriceJson.getInt("courses.size()");

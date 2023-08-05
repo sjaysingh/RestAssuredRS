@@ -3,7 +3,7 @@ package org.example.main;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.example.lib.Payload;
-import org.example.lib.ResuableMethods;
+import org.example.lib.ReusableMethods;
 import org.testng.Assert;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,7 +38,7 @@ public class BasicsMain {
                 .when().log().all().put("/maps/api/place/update/json")
                 .then().log().all().assertThat().statusCode(200).body("msg",equalTo("Address successfully updated")).extract().response().asString();
 
-        JsonPath js1 = ResuableMethods.rawToJson(response2);
+        JsonPath js1 = ReusableMethods.rawToJson(response2);
 
         String message = js1.getString("msg");
         Assert.assertEquals(message,"Address successfully updated");

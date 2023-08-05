@@ -3,7 +3,7 @@ package org.example.main;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.example.lib.Payload;
-import org.example.lib.ResuableMethods;
+import org.example.lib.ReusableMethods;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -15,7 +15,7 @@ import static io.restassured.RestAssured.given;
 
 public class DynamicJson {
 
-    @Test(dataProvider = "booksData", dataProviderClass=ResuableMethods.class) //Using dataProvider from a different class
+    @Test(dataProvider = "booksData", dataProviderClass= ReusableMethods.class) //Using dataProvider from a different class
     public void addBook(String aisle, String isbn){
         RestAssured.baseURI = "http://216.10.245.166";
 
@@ -26,7 +26,7 @@ public class DynamicJson {
                 then().log().all().assertThat().statusCode(404).
                 extract().response().toString();
 
-        JsonPath js = ResuableMethods.rawToJson(response);
+        JsonPath js = ReusableMethods.rawToJson(response);
         String bookId = js.getString("ID");
         System.out.println(bookId);
 
@@ -45,7 +45,7 @@ public class DynamicJson {
                 then().log().all().assertThat().statusCode(404).
                 extract().response().toString();
 
-        JsonPath js = ResuableMethods.rawToJson(response);
+        JsonPath js = ReusableMethods.rawToJson(response);
         String bookId = js.getString("ID");
         System.out.println(bookId);
 
@@ -70,7 +70,7 @@ public class DynamicJson {
                 then().log().all().assertThat().statusCode(404).
                 extract().response().toString();
 
-        JsonPath js = ResuableMethods.rawToJson(response);
+        JsonPath js = ReusableMethods.rawToJson(response);
         String bookId = js.getString("ID");
         System.out.println(bookId);
 
