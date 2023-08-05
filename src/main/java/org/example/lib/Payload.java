@@ -1,4 +1,6 @@
-package org.example;
+package org.example.lib;
+
+import org.testng.annotations.DataProvider;
 
 public class Payload {
     public static String addPlace(){
@@ -76,5 +78,18 @@ public class Payload {
                 "\n" +
                 "}";
     }
+
+    public static String addBook(String aisle, String isbn){
+        String payload = "{\n" +
+                "\n" +
+                "\"name\":\"Learn Appium Automation with Java\",\n" +
+                "\"isbn\":\""+isbn+"\",\n" +
+                "\"aisle\":\""+aisle+"\",\n" +
+                "\"author\":\"John foe\"\n" +
+                "}";
+        return payload;
+    }
+
+
   
 }

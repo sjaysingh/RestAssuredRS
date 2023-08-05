@@ -1,7 +1,8 @@
-package org.example;
+package org.example.main;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
+import org.example.lib.Payload;
 import org.example.lib.ResuableMethods;
 import org.testng.Assert;
 import java.util.HashMap;
@@ -12,7 +13,7 @@ import static org.hamcrest.Matchers.*;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
-public class Main {
+public class BasicsMain {
     public static void main(String[] args) {
         RestAssured.baseURI = "https://rahulshettyacademy.com";
 
