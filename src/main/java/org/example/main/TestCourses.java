@@ -5,6 +5,7 @@ import org.example.pojoClasses.GetCourse;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.Test;
 import org.openqa.selenium.*;
 
@@ -21,8 +22,9 @@ public class TestCourses {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setBrowserVersion("114.0");
 
-        driver.get("https://www.google.com");
-        //driver.get("https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.email&auth_url=https://accounts.google.com/o/oauth2/v2/auth&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&response_type=code&redirect_uri=https://rahulshettyacademy.com/getCourse.php&state=verifyfjdss");
+//        WebDriver driver = new SafariDriver();
+
+        driver.get("https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.email&auth_url=https://accounts.google.com/o/oauth2/v2/auth&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&response_type=code&redirect_uri=https://rahulshettyacademy.com/getCourse.php&state=verifyfjdss");
         driver.findElement(By.cssSelector("input[type='email']")).sendKeys("fdfd");
         driver.findElement(By.cssSelector("input[type='email']")).sendKeys(Keys.ENTER);
         Thread.sleep(3000);
